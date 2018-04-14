@@ -1,28 +1,63 @@
 <!doctype html>
 <html ng-app='App'>
-  <head>
-    <title>Sarah's Birthday</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/custom_styles.css">
-    <script src="js/angular.min.js"></script>
-    <script src="js/app.js"></script>
-  </head>
-<body>
-   <div class="container" ng-controller="AppController">
-     <h1>Sarah's Gift</h1>
 
-         <div class="form-group">
-             <!-- TEXT HERE ABOUT GIFT -->
-         </div>
-         <div class="form-group">
-             <!-- make button that is actually another meme or img <button class="btn btn-default" ng-click="revealGift()">Reveal Your Gift</button> -->
-         </div>
-         <div class="form-group message">
-             <!-- hidden gift to go here! -->
-           <span ng-style="myStyle" >{{messageToUser}}</span>
-         </div>
-   </div>
+<head>
+  <title>Sarah's Birthday</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/custom_styles.css">
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+  <div class="container" ng-controller="AppController">
+    <div class="text-center">
+      <h1>Happy Birthday!</h1>
+
+      <!-- TEXT HERE ABOUT GIFT -->
+      <div class="margins text">
+        Happy Birthday! You are now old! In celebration of this momentous moment, I've conjured up a surprise gift for you.
+        <br/> I wonder what it is?!
+      </div>
+
+      <!-- make button that is actually another meme or img <button class="btn btn-default" ng-click="revealGift()">Reveal Your Gift</button> -->
+      <div>
+        <button class="btn btn-default margins" ng-click="showHiddenContent()">Unwrap your gift</button>
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-s-12 col-xs-12 text-center">
+        <!-- hidden gift to go here! -->
+        <div ng-hide="hideImageStatus">
+          <img src="https://cdn.someecards.com/someecards/usercards/youre-going-to-kidnap-me-so-youre-going-to-sneak-into-my-house-tie-me-up-blindfold-meoh-wait-that-sounds-kinda-fun-actually-93819.png" alt="meme" height="400" width="500" />
+        </div>
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-12 col-s-12 col-xs-12 text-center">
+        <div ng-hide="hideMessage">
+        <span class="message">You are now the owner of (1)
+          <br/>
+          <b>steal-your-husband-for-the-night card</b>!
+          <br/>
+          <br/>
+          <span class="smallMessage">
+           In order to play this card, simply send your husband the link below and he will have to cancel his plans, leave his computer, turn-off his phone, and hangout with you all night.* </span>
+           <br/>
+           <br/>
+          <a href="https://some.ly/eYzKWzZ/" class="url">https://some.ly/eYzKWzZ/</a>
+           <br/>
+           <br/>
+        </span>
+
+        <span class="fineText">
+          *Cannot cancel appointments, or otherwise previously scheduled events. Cannot jeopardize work work or school work deadlines. "Night" is qualified as from dinner-onward. The date of the night you are stealing must be specified at the time of playing. This card <em>may</em> be played in advance of the night you are stealing.
+        </span>
+      </div>
+      </div>
+
+    </div>
+  </div>
 
 </body>
+
 </html>
