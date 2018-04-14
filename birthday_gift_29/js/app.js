@@ -8,15 +8,15 @@
 
   function AppController($scope, $timeout ) {
     var cntrl = this
-    cntrl.hideImageStatus = true;
-    cntrl.hideMessage = true;
+    cntrl.hideImageStatus = false;
+    cntrl.hideMessage = false;
 
     cntrl.showHiddenContent = function() {
       console.log("show meme");
-      cntrl.hideImageStatus = false
+      cntrl.hideImageStatus = true
       $timeout(function () {
         console.log("showing description/details");
-        cntrl.hideMessage = false;
+        cntrl.hideMessage = true;
       }, 3000);
     }
 
