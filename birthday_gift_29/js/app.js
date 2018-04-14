@@ -7,14 +7,20 @@
   AppController.$inject = ['$scope', '$timeout'];
 
   function AppController($scope, $timeout ) {
+    var cntrl = this
+    cntrl.hideImageStatus = true;
+    cntrl.hideMessage = true;
 
-    $scope.hideStatus = true;
-
-    $scope.showHiddenContent = function() {
+    cntrl.showHiddenContent = function() {
       console.log("show meme");
-      $scope.hideStatus = false
-      $timeout(function () { console.log("showing description/details");}, 5000);
+      cntrl.hideImageStatus = false
+      $timeout(function () {
+        console.log("showing description/details");
+        cntrl.hideMessage = false;
+      }, 3000);
     }
+
+
 
   };
 
