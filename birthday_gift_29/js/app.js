@@ -17,7 +17,7 @@
       $timeout(function () {
         console.log("showing description/details");
         cntrl.hideMessage = true;
-      }, 3000);
+      }, 4000);
     }
 
 
